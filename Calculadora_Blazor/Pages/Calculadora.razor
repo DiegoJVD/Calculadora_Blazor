@@ -1,0 +1,53 @@
+﻿@page "/calculadora"
+
+<h3>Calculadora</h3>
+
+<table class="table">
+    <tbody>
+        <tr>
+            <td>Primer numero </td>
+            <td><input @bind="primerNumero" /></td>
+        </tr>
+        <tr>
+            <td>Segundo numero </td>
+            <td><input @bind="segundoNumero" /></td>
+        </tr>
+        <tr>
+            <td>La suma es: </td>
+            <td>@suma</td>
+        </tr>
+        <tr>
+            <td>La resta es: </td>
+            <td>@resta</td>
+        </tr>
+        <tr>
+            <td>La multiplicacion es: </td>
+            <td>@multiplicacion</td>
+        </tr>
+
+    </tbody>
+</table>
+
+<button @onclick="calcular"> click </button>
+
+@code {
+    private float primerNumero;
+    private float segundoNumero;
+    private float suma;
+    private float resta;
+    private float multiplicacion;
+
+
+
+
+
+    private void calcular()
+    {
+
+        suma = primerNumero + segundoNumero;
+        resta = primerNumero - segundoNumero;
+        multiplicacion = primerNumero * segundoNumero;
+
+    }
+
+}
